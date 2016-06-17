@@ -1,0 +1,18 @@
+#slideshow { 
+    margin: 50px auto; 
+    position: relative; 
+}
+
+#slideshow > div { 
+    position: absolute; 
+    top: 50px; 
+    left: 0px; 
+    right: 0px; 
+    bottom: 0px; 
+}
+
+img
+{
+	 width: 100; 
+	 height:100%;   
+}

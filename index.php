@@ -2,72 +2,59 @@
 <html>
 <head>
 	<title></title>
-	<style type="text/css">
-
-		#slideshow { 
-		    margin: 50px auto; 
-		    position: relative; 
-		}
-
-		#slideshow > div { 
-		    position: absolute; 
-		    top: 0px; 
-		    left: 0px; 
-		    right: 0px; 
-		    bottom: 0px; 
-		}
-
-		img
-		{
-			 max-width:auto; 
-			 max-height:auto;   
-		}
-
-	</style>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- stylesheet for slideshow of featured articles -->
+	<link rel="stylesheet" type="text/css" href="stylesheets/animation.css">
+
+	<!-- stylesheet for footer -->
+	<link rel="stylesheet" type="text/css" href="stylesheets/footer.css">
+
 	<?php include 'config/css.php'; ?>
 	<?php include 'config/js.php'; ?>
+
+	<!-- stylesheet for custom scrollbar -->
+	<link rel="stylesheet" href="config/jquery.mCustomScrollbar.css" >
+
+	<!-- custom scroll bar js file -->
+	<script src="jquery.mCustomScrollbar.concat.min.js"></script>
+
 </head>
 
-<body>
+<body class="mCustomScrollbar">
 
-	
-	<!-- body content begin-->
-	<!-- grid system for featured animated article should be 2-7-3 -->
-	<div class="container-fluid">
-		<!-- navigation bar begin-->
-		 <?php include 'functions/navbar.php'; ?> <br> <br> <br> <br> <br> <br>
-		<!-- navigation bar end -->
-	
-		<div class="row">
-
-			<div class="col-sm-2">
-
-			</div>
-		    
-		    <div id="slideshow" class="col-sm-8">
-			   	<div>
-			    	<img class="img-responsive" src="images/1.jpg"> 
-			   	</div>
-			   	<div>
-			    	<img class="img-responsive" src="images/2.jpg">
-			   	</div>
-			   	<div>
-			    	<img class="img-responsive" src="images/3.jpg"> 
-		   	  	</div>
-			</div>	
-
-		    <div class="col-sm-2" >
-		    	
-		    </div>
-		</div>	
+	<div class="container ">
+		<!-- body content begin-->
+		<!-- grid system for featured animated article should be 2-7-3 -->
 		
+		<!-- navigation bar begin-->
+		 <?php include 'functions/navbar.php'; ?> 
+		<!-- navigation bar end -->
+
+		<div class="body">
+			<div class="row">
+				<div class="col-sm-1"> </div>
+			    <div id="slideshow" class="col-sm-9">
+				   	<div>
+				    	<img class="img-responsive" src="images/1.jpg"> 
+				   	</div>
+				   	<div>
+				    	<img class="img-responsive" src="images/2.jpg">
+				   	</div>
+				   	<div>
+				    	<img class="img-responsive" src="images/3.jpg"> 
+			   	  	</div>
+				</div>	
+			    <div class="col-sm-2" > </div>
+			</div>
+		</div>
+
+		<!-- footer begin-->
+		<?php include 'functions/footer.php'; ?>
+		<!-- footer end -->
 
 	</div>
-	<!-- body content begin -->
-	<!-- footer begin-->
-	<!-- footer end -->
 
 	<script type="text/javascript">
 		$(window).ready(function(){
@@ -83,5 +70,20 @@
 			},  3000);
 		});
 	</script>
+
+	<script>
+	    (function($){
+	        $(window).on("load",function(){
+	            $(".content").mCustomScrollbar();
+	        });
+	    })(jQuery);
+
+	    // $(".content").mCustomScrollbar({
+	    //     axis:"yx" // vertical and horizontal scrollbar
+	    // });
+	</script>
+
+
 </body>
+
 </html>
